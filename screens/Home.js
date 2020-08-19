@@ -1,5 +1,13 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, StatusBar, FlatList} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  StatusBar,
+  FlatList,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
+import {FAB} from 'react-native-paper';
 import ListIterm from '../components/ListIterm';
 
 export default function Home() {

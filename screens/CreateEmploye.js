@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
   View,
   TextInput,
-  Button,
   Modal,
   StyleSheet,
   Alert,
@@ -24,16 +23,18 @@ export default function CreateEmploye() {
         animationType="slide"
         visible={isShowModal}
         onRequestClose={() => Alert.alert('Close')}
-        style={styles.modal}>
-        <View>
-          <Text>Ok nha</Text>
-
-          <TouchableOpacity
-            style={styles.containerLose}
-            activeOpacity={0.5}
-            onPress={() => setIsShowModal(!isShowModal)}>
-            <Text style={styles.buttonLose}>LOSE</Text>
-          </TouchableOpacity>
+        style={styles.modal}
+        transparent={true}>
+        <View style={styles.containerModal}>
+          <View style={styles.mainMadal}>
+            <Text>Ok nha</Text>
+            <TouchableOpacity
+              style={styles.containerLose}
+              activeOpacity={0.5}
+              onPress={() => setIsShowModal(!isShowModal)}>
+              <Text style={styles.buttonLose}>LOSE</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </Modal>
       <TextInput
@@ -115,13 +116,35 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   buttonLose: {
-    backgroundColor: 'red',
-    width: 50,
-    height: 40,
-    borderRadius: 50,
     color: 'white',
   },
   containerLose: {
-    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 60,
+    height: 30,
+    borderRadius: 50,
+    backgroundColor: 'red',
+  },
+  containerModal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  mainMadal: {
+    backgroundColor: 'white',
+    padding: 32,
+    paddingLeft: 64,
+    paddingRight: 64,
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginTop: 8,
   },
 });
