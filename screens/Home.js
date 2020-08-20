@@ -4,13 +4,12 @@ import {
   StyleSheet,
   StatusBar,
   FlatList,
-  TouchableOpacity,
-  Text,
+  View,
 } from 'react-native';
-import {FAB} from 'react-native-paper';
+import {FAB, Button} from 'react-native-paper';
 import ListIterm from '../components/ListIterm';
 
-export default function Home() {
+export default function Home({navigation}) {
   const DATA = [
     {
       id: 1,
@@ -84,6 +83,13 @@ export default function Home() {
           keyExtractor={(item) => item.id}
           contentContainerStyle={{paddingLeft: 8, paddingRight: 8}}
         />
+
+        <FAB
+          style={styles.fab}
+          small={false}
+          icon="plus"
+          onPress={() => navigation.navigate('Create')}
+        />
       </SafeAreaView>
     </>
   );
@@ -91,5 +97,12 @@ export default function Home() {
 const styles = StyleSheet.create({
   safeArea: {
     backgroundColor: '#dddddd',
+    flex: 1,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
   },
 });
