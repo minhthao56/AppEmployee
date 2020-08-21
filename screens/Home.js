@@ -4,9 +4,8 @@ import {
   StyleSheet,
   StatusBar,
   FlatList,
-  View,
 } from 'react-native';
-import {FAB, Button} from 'react-native-paper';
+import {FAB} from 'react-native-paper';
 import ListIterm from '../components/ListIterm';
 
 export default function Home({navigation}) {
@@ -79,9 +78,10 @@ export default function Home({navigation}) {
       <SafeAreaView style={styles.safeArea}>
         <FlatList
           data={DATA}
-          renderItem={({item}) => <ListIterm item={item} />}
+          renderItem={({item}) => <ListIterm item={item} navigation = {navigation}/>}
           keyExtractor={(item) => item.id}
           contentContainerStyle={{paddingLeft: 8, paddingRight: 8}}
+        
         />
 
         <FAB

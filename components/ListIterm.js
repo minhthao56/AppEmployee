@@ -8,13 +8,12 @@ import {
   Alert,
 } from 'react-native';
 
-export default function ListIterm({item}) {
+export default function ListIterm({item, navigation}) {
+  
   return (
     <TouchableOpacity
       activeOpacity={0.5}
-      onPress={() => {
-        Alert.alert('Clicked');
-      }}>
+      onPress={() => navigation.navigate('Profile', {id: item.id})}>
       <View style={styles.container}>
         <Image source={{uri: item.url}} style={styles.image} />
         <View>
