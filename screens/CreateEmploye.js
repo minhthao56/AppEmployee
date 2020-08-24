@@ -72,7 +72,7 @@ export default function CreateEmploye() {
           name="up"
           size={30}
           color="white"
-          backgroundColor="'rgba(255, 0, 255, 0)'"
+          backgroundColor="rgba(255, 0, 255, 0)"
           iconStyle={{marginLeft: 'auto', marginRight: 'auto'}}
           style={styles.buttonUp}
           onPress={() => setIsShowModal(!isShowModal)}
